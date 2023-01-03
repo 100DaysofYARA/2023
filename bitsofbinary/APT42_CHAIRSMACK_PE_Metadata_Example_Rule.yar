@@ -6,6 +6,7 @@ rule APT42_CHAIRSMACK_PE_Metadata {
         author = "BitsOfBinary"
         description = "Detects samples of CHAIRSMACK based on unique PE metadata (i.e. imphash and rich PE header hash)"
         reference = "https://mandiant.com/resources/blog/apt42-charms-cons-compromises"
+        reference = "https://bitsofbinary.github.io/yara/2023/01/03/100daysofyara-day-3.html"
         hash = "a37a290863fe29b9812e819e4c5b047c44e7a7d7c40e33da6f5662e1957862ab"
         version = "1.0"
         date = "2023-01-03"
