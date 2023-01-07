@@ -4,7 +4,8 @@ rule tool_network_free_code
 		description = "Identify executables with domains with free hosting of code."
 		author = "@shellcromancer"
 		version = "1.0"
-		last_modified = "2023.01.05"
+		date = "2023.01.05"
+		DaysofYARA = "5/100"
 
 	strings:
 		$cf_workers = ".workers.dev" xor

@@ -1,10 +1,11 @@
-rule crypto
+rule crypto_addr
 {
 	meta:
-		desc = "Identify cryptocurreny payment wallets"
+		description = "Identify cryptocurreny payment wallets"
 		author = "@shellcromancer"
 		version = "1.0"
-		last_modified = "2023.01.06"
+		date = "2023.01.06"
+		DaysofYARA = "6/100"
 
 	strings:
 		$btc_p2sh = /\b[13][a-km-zA-HJ-NP-Z1-9]{25,39}\b/

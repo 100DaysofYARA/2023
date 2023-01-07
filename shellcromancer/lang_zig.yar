@@ -4,8 +4,9 @@ rule lang_zig
 		description = "Identify a Zig binary regardless of format (PE, Macho, ELF) or arch. Tested with regular and stripped binaries."
 		author = "@shellcromancer"
 		version = "1.0"
-		last_modified = "2023.01.04"
+		date = "2023.01.04"
 		sample = "ae3beacdfaa311d48d9c776ddd1257a6aad2b0fe" // zig init-exe macOS
+		DaysofYARA = "4/100"
 
 	strings:
 		$zig = "zig"
