@@ -1,11 +1,12 @@
 rule lang_nim
 {
 	meta:
-		desc = "Identify a Nim binary regardless of format (PE, Macho, ELF) or arch."
+		description = "Identify a Nim binary regardless of format (PE, Macho, ELF) or arch."
 		author = "@shellcromancer"
 		version = "1.0"
-		last_modified = "2023.01.03"
+		date = "2023.01.03"
 		sample = "8ec44187e50c15a7c4c89af4a1e99c63c855539101ec1ef4588d2e12e05f7d2b" // NimGrabber
+		DaysofYARA = "3/100"
 
 	strings:
 		$nim = "@nim"
@@ -32,6 +33,8 @@ rule tool_nimplant
 		version = "0.1"
 		date = "2023-01-03"
 		reference = "https://casvancooten.com/posts/2021/08/building-a-c2-implant-in-nim-considerations-and-lessons-learned/#introducing-nimplant---a-lightweight-implant-and-c2-framework"
+		DaysofYARA = "3/100"
+
 	strings:
 		$name = "nimplant" nocase
 
