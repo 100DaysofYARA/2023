@@ -10,8 +10,8 @@ rule MAL_PuzzleMaker_Launcher
         hash = "44d9f36c088dd420ad96a8518df7e9155145e04db788a99a8f8f99179427a447"
         hash = "bab8ad15015589e3f70643e6b59a5a37ab2c5a9cf799e0472cb9c1a29186babc"
 
-	strings:
-		$call_CoCreateInstance_WbemLocator = { 4? 89 6d bf 4? 8d 45 bf 4? 89 44 ?4 20 4? 8d 0d ?? ?? ?? ?? 33 d2 44 8d 42 01 4? 8d 0d ?? ?? ?? ?? ff 15 ?? ?? ?? ?? 8b d8 85 c0  }
+    strings:
+	$call_CoCreateInstance_WbemLocator = { 4? 89 6d bf 4? 8d 45 bf 4? 89 44 ?4 20 4? 8d 0d ?? ?? ?? ?? 33 d2 44 8d 42 01 4? 8d 0d ?? ?? ?? ?? ff 15 ?? ?? ?? ?? 8b d8 85 c0  }
         /*
            140001e9b  MOV        qword ptr [RBP + local_a0],R13
            140001e9f  LEA        RAX=>local_a0,[RBP + -0x41]
@@ -41,8 +41,8 @@ rule MAL_PuzzleMaker_Launcher
            1400019e9 ff 15 19      CALL       qword ptr [->ADVAPI32.DLL::CreateServiceW]
 
         */
-	condition:
-		uint16be(0x0) == 0x4d5a and
+    condition:
+        uint16be(0x0) == 0x4d5a and
         1 of them
 }
 
@@ -59,8 +59,8 @@ rule MAL_PuzzleMaker_Payload
         hash = "8a17279ba26c8fbe6966ea3300fdefb1adae1b3ed68f76a7fc81413bd8c1a5f6"
         hash = "f2ce2a00de8673f52d37911f3e0752b8dfab751b2a17e719a565b4083455528e"
 
-	strings:
-		$case_statement = { 33 db 4? 8d 4? ?? 80 7? 00 01 8b fb 41 8b d4 4? 8b ce 40 0f 94 ?? 41 80 f9 15 89 7c ?4 20 0f 94 ?? 44 8b cb  }
+    strings:
+        $case_statement = { 33 db 4? 8d 4? ?? 80 7? 00 01 8b fb 41 8b d4 4? 8b ce 40 0f 94 ?? 41 80 f9 15 89 7c ?4 20 0f 94 ?? 44 8b cb  }
         /*
             switchD_180001fd4::caseD_15
            180001fe7  XOR        EBX,EBX
@@ -78,7 +78,7 @@ rule MAL_PuzzleMaker_Payload
 
         */
 
-		$cryptography = { 41 b9 01 00 00 00 c7 44 ?4 20 00 00 00 f0 45 33 c0 4? 8d 4c ?4 60 33 d2 ff 15 ?? ?? ?? ?? 85 c0 74 ?? 4? 8b 4c ?4 60 4? 8d 85 b0 00 00 00 ba 20 00 00 00 ff 15 ?? ?? ?? ?? 4? 8b 4c ?4 60 33 d2  }
+        $cryptography = { 41 b9 01 00 00 00 c7 44 ?4 20 00 00 00 f0 45 33 c0 4? 8d 4c ?4 60 33 d2 ff 15 ?? ?? ?? ?? 85 c0 74 ?? 4? 8b 4c ?4 60 4? 8d 85 b0 00 00 00 ba 20 00 00 00 ff 15 ?? ?? ?? ?? 4? 8b 4c ?4 60 33 d2  }
         /*
            1800040d1  MOV        R9D,0x1
            1800040d7  MOV        dword ptr [RSP + local_9e8],0xf0000000
@@ -100,7 +100,7 @@ rule MAL_PuzzleMaker_Payload
 
         */
 
-	condition:
-		uint16be(0x0) == 0x4d5a and
+    condition:
+        uint16be(0x0) == 0x4d5a and
         1 of them
 }
