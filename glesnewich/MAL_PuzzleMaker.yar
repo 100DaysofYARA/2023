@@ -23,7 +23,7 @@ rule MAL_PuzzleMaker_Launcher
            140001ebc  CALL       qword ptr [->OLE32.DLL::CoCreateInstance]
 
         */
-		$CreateService = { 4? 89 6c ?4 60 4? 8d 05 ?? ?? ?? ?? 4? 89 6c ?4 58 4? 8d 15 ?? ?? ?? ?? 4? 89 6c ?4 50 41 b9 ff 01 0f 00 4? 89 6c ?4 48 4? 8b cf 4? 89 6c ?4 40 4? 89 74 ?4 38 44 89 6c ?4 30 c7 44 ?4 28 02 00 00 00 c7 44 ?4 20 10 00 00 00 ff 15 }
+        $CreateService = { 4? 89 6c ?4 60 4? 8d 05 ?? ?? ?? ?? 4? 89 6c ?4 58 4? 8d 15 ?? ?? ?? ?? 4? 89 6c ?4 50 41 b9 ff 01 0f 00 4? 89 6c ?4 48 4? 8b cf 4? 89 6c ?4 40 4? 89 74 ?4 38 44 89 6c ?4 30 c7 44 ?4 28 02 00 00 00 c7 44 ?4 20 10 00 00 00 ff 15 }
         /*
            14000199f 4c 89 6c      MOV        qword ptr [RSP + local_5f8],R13
            1400019a4 4c 8d 05      LEA        R8,[DAT_14001e5d0]                               = 20h
