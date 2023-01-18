@@ -1,4 +1,4 @@
-rule file_wasm
+private rule file_wasm
 {
 	meta:
 		description = "Identify WebAssembly programs in the binary format."
