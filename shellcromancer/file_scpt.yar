@@ -1,4 +1,4 @@
-rule file_applescript
+private rule file_applescript
 {
 	meta:
 		description = "Identify Compiled AppleScript Programs"
@@ -12,9 +12,12 @@ rule file_applescript
 
 	strings:
 		$head = { 46 61 73 64 55 41 53 20 }
+		$type = { 61 73 63 72 }
 		$tail = { fa de de ad }
 
 	condition:
 		$head at 0 and
+		$type and
 		$tail at filesize - 4
 }
+
