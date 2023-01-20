@@ -1,4 +1,4 @@
-rule file_jxa_script
+private rule file_jxa_script
 {
 	meta:
 		description = "Identify JavaScript for Automation Programs"
