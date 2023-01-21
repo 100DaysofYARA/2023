@@ -1,0 +1,45 @@
+rule INFO_PList_Param_StartInterval { strings: $ = "<key>StartInterval</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_ThrottleInterval { strings: $ = "<key>ThrottleInterval</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_AbandonProcessGroup { strings: $ = "<key>AbandonProcessGroup</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_RootDirectory { strings: $ = "<key>RootDirectory</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_Umask { strings: $ = "<key>Umask</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_OtherJobEnabled { strings: $ = "<key>OtherJobEnabled</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_QueueDirectories { strings: $ = "<key>QueueDirectories</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_WatchPaths { strings: $ = "<key>WatchPaths</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_StartCalendarInterval { strings: $ = "<key>StartCalendarInterval</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_StartOnMount { strings: $ = "<key>StartOnMount</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_EnvironmentVariables { strings: $ = "<key>EnvironmentVariables</key>" ascii wide condition: all of them }
+rule INFO_PList_Param_ProgramArguments { strings: $ = "<key>ProgramArguments</key>" ascii wide condition: all of them }
+
+rule SUSP_PList_Param_RunAtLoad { strings: $ = "<key>RunAtLoad</key>" ascii wide condition: all of them }
+rule SUSP_PList_Param_KeepAlive { strings: $ = "<key>KeepAlive</key>" ascii wide condition: all of them }
+
+rule SUSP_PList_Param_RunAtLoad_base64 { strings: $ = "<key>RunAtLoad</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_KeepAlive_base64 { strings: $ = "<key>KeepAlive</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_StartInterval_base64 { strings: $ = "<key>StartInterval</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_ThrottleInterval_base64 { strings: $ = "<key>ThrottleInterval</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_AbandonProcessGroup_base64 { strings: $ = "<key>AbandonProcessGroup</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_RootDirectory_base64 { strings: $ = "<key>RootDirectory</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_Umask_base64 { strings: $ = "<key>Umask</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_OtherJobEnabled_base64 { strings: $ = "<key>OtherJobEnabled</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_QueueDirectories_base64 { strings: $ = "<key>QueueDirectories</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_WatchPaths_base64 { strings: $ = "<key>WatchPaths</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_StartCalendarInterval_base64 { strings: $ = "<key>StartCalendarInterval</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_StartOnMount_base64 { strings: $ = "<key>StartOnMount</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_EnvironmentVariables_base64 { strings: $ = "<key>EnvironmentVariables</key>" base64 base64wide condition: all of them }
+rule SUSP_PList_Param_ProgramArguments_base64 { strings: $ = "<key>ProgramArguments</key>" base64 base64wide condition: all of them }
+
+rule SUSP_PList_Param_RunAtLoad_xor { strings: $ = "<key>RunAtLoad</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_KeepAlive_xor { strings: $ = "<key>KeepAlive</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_StartInterval_xor { strings: $ = "<key>StartInterval</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_ThrottleInterval_xor { strings: $ = "<key>ThrottleInterval</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_AbandonProcessGroup_xor { strings: $ = "<key>AbandonProcessGroup</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_RootDirectory_xor { strings: $ = "<key>RootDirectory</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_Umask_xor { strings: $ = "<key>Umask</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_OtherJobEnabled_xor { strings: $ = "<key>OtherJobEnabled</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_QueueDirectories_xor { strings: $ = "<key>QueueDirectories</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_WatchPaths_xor { strings: $ = "<key>WatchPaths</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_StartCalendarInterval_xor { strings: $ = "<key>StartCalendarInterval</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_StartOnMount_xor { strings: $ = "<key>StartOnMount</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_EnvironmentVariables_xor { strings: $ = "<key>EnvironmentVariables</key>" xor(0x01-0xff) condition: all of them }
+rule SUSP_PList_Param_ProgramArguments_xor { strings: $ = "<key>ProgramArguments</key>" xor(0x01-0xff) condition: all of them }
