@@ -4,7 +4,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_0
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
@@ -21,7 +21,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_1
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
@@ -38,7 +38,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_2
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
@@ -55,7 +55,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_3
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
@@ -71,7 +71,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_4
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
@@ -87,7 +87,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_5
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
@@ -103,7 +103,7 @@ rule INFO_Macho_ExternalLibary_Load_Count_More_Than_5
 		author = "Greg Lesnewich"
 		date = "2023-01-24"
 		version = "1.0"
-        description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
+        	description = "highlight the volume of external libraries loaded by a Macho sample, derived from number of LOAD_DYLIB commands in the LoadCommand header"
 
 	strings:
 		$load_cmd = {00 00 00 00 0C 00 00 00}
