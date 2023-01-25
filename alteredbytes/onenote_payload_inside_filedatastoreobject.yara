@@ -7,8 +7,8 @@ meta:
 	version = "1.0"
 	date = "2023.01.25"
 	reference = "https://docs.fileformat.com/note-taking/one/"
-  reference = "https://github.com/100DaysofYARA/2023/blob/215676cd2c05feef2b2c0a11855cda2e4ebcb23c/shellcromancer/file_one.yar"
-  reference = "https://blog.didierstevens.com/2023/01/22/analyzing-malicious-onenote-documents/"
+	reference = "https://github.com/100DaysofYARA/2023/blob/215676cd2c05feef2b2c0a11855cda2e4ebcb23c/shellcromancer/file_one.yar"
+	reference = "https://blog.didierstevens.com/2023/01/22/analyzing-malicious-onenote-documents/"
 
 strings:
 
