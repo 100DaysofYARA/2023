@@ -30,6 +30,21 @@ rule SUSP_Macho_Execution_BinBash
         and all of them
 }
 
+rule SUSP_Macho_Execution_Bin_sh
+{
+    meta:
+        author = "Greg Lesnewich"
+        date = "2023-02-01"
+        version = "1.0"
+        description = "checking Macho files for additional execution strings like sh shell"
+
+    strings:
+        $ = "bin/sh" ascii wide
+    condition:
+        (uint32be(0x0) == 0xCFFAEDFE or uint32be(0x0) == 0xCEFAEDFE)
+        and all of them
+}
+
 rule SUSP_Macho_Execution_BinZsh
 {
     meta:
