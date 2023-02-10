@@ -11,7 +11,7 @@ private rule macho_has_pagezero
 
 	condition:
 		// check for section in Universal/FAT binaries
-		for all file in macho.file : (
+		for any file in macho.file : (
 			for any seg in file.segments : (
 				seg.segname == "__PAGEZERO"
 			)
@@ -27,9 +27,9 @@ rule macho_no_pagezero
 		description = "Identify macho executable without a __PAGEZERO segment."
 		author = "@shellcromancer"
 		version = "1.0"
-		date = "2023.02.XX"
+		date = "2023.02.09"
 		sample = "6ab836d19bc4b69dfe733beef295809e15ace232be0740bc326f58f9d31d8197" // FinSpy
-		DaysofYARA = "3X/100"
+		DaysofYARA = "40/100"
 
 	condition:
 		// is Mach-O
