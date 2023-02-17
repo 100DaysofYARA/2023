@@ -45,3 +45,30 @@ rule macos_bundle_mdimporter
 			)
 		)
 }
+
+rule macos_bundle_saver
+{
+	meta:
+		description = "Identify macOS Screen Savers - a macOS persistence vector."
+		author = "@shellcromancer"
+		version = "1.0"
+		date = "2023.02.17"
+		reference = "https://theevilbit.github.io/beyond/beyond_0016/"
+		reference = "https://posts.specterops.io/saving-your-access-d562bf5bf90b"
+		DaysofYARA = "48/100"
+
+	strings:
+		$init1 = "initWithFrame"
+		$init2 = "configureSheet"
+		$init3 = "hasConfigureSheet"
+		$init4 = "startAnimation"
+
+	condition:
+		3 of them and
+		(
+			macho.filetype == macho.MH_BUNDLE or
+			for any file in macho.file : (
+				file.filetype == macho.MH_BUNDLE
+			)
+		)
+}
