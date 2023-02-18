@@ -72,3 +72,27 @@ rule macos_bundle_saver
 			)
 		)
 }
+
+rule macos_bundle_colorpicker
+{
+	meta:
+		description = "Identify macOS Color Picker's - a macOS persistence vector."
+		author = "@shellcromancer"
+		version = "1.0"
+		date = "2023.02.18"
+		reference = "https://theevilbit.github.io/beyond/beyond_0017/"
+		DaysofYARA = "49/100"
+
+	strings:
+		$init1 = "NSColorPicker"
+		$init2 = "NSColorPickingCustom"
+
+	condition:
+		all of them and
+		(
+			macho.filetype == macho.MH_BUNDLE or
+			for any file in macho.file : (
+				file.filetype == macho.MH_BUNDLE
+			)
+		)
+}
