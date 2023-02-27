@@ -21,6 +21,6 @@ rule RopGadgetHunting
 
 
     condition:
-        all of them and uint16(0) == 0x5A4D
+        uint16(0) == 0x5A4D and all of them
 }
 
