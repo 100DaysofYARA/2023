@@ -1,4 +1,4 @@
-rule mal_macos_pureland
+rule mal_macos_pureland : stealer_0xfff
 {
 	meta:
 		description = "Identify macOS PureLand crypto stealer."
@@ -7,6 +7,7 @@ rule mal_macos_pureland
 		date = "2023.03.04"
 		sample = "82633f6fec78560d657f6eda76d11a57c5747030847b3bc14766cec7d33d42be"
 		DaysofYARA = "63/100"
+		DaysofYARA = "67/100"
 
 	strings:
 		$s0 = "system_profiler SPHardwareDataType > /Users/"
@@ -28,5 +29,5 @@ rule mal_macos_pureland
 			uint32(0) == 0xcafebabe or // Mach-O FAT_MAGIC
 			uint32(0) == 0xbebafeca    // Mach-O FAT_CIGAM
 		) and
-		all of them
+		60% of them
 }
