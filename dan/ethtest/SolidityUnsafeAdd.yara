@@ -20,10 +20,10 @@ rule SolidityUnsafeAdd
          $require_no_overflow = {
             01      // ADD
             10      // LT
-	        15      // ISZERO
-	        15      // ISZERO
-	        15      // ISZERO
-	        60      // PUSH1 0x9b
+	    15      // ISZERO
+	    15      // ISZERO
+	    15      // ISZERO
+	    60      // PUSH1 0x9b
 
          }
 
