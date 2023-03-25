@@ -150,3 +150,19 @@ rule AcidBox_SSP_DLL_Loader_windigest_Version_Info {
         pe.version_info["InternalName"] == "windigest.dll" or
         pe.version_info["FileDescription"] == "Windows Digest Access"
 }
+
+import "pe"
+
+rule AcidBox_SSP_DLL_Loader_msv1_0_Version_Info {
+    meta:
+        description = "Detects AcidBox SSP DLL loaders, based on a unique version information of 'msv1_0'"
+        author = "BitsOfBinary"
+        reference = "https://unit42.paloaltonetworks.com/acidbox-rare-malware/"
+        reference = "https://bitsofbinary.github.io/yara/2023/03/25/100daysofyara-day-84.html"
+        version = "1.0"
+        date = "2023-03-24"
+        DaysofYARA = "84/100"
+        
+    condition:
+        pe.version_info["InternalName"] == "msv1_0.dll"
+}
