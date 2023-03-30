@@ -1,5 +1,5 @@
+import re
 from binascii import hexlify
-
 
 input_1 = r'Software\Microsoft\Windows\CurrentVersion\Run'
 input_2 = r'https://github.com/100DaysofYARA'
@@ -13,7 +13,12 @@ rule {title}_2byte
     description = "Look for two byte xor of target string. Creating ~64K separate rules is faster (~12MB rule file)"
     warning = "Loops over entire file, very poor performance."
     target_string = "{target_string}"
+
+  strings:
+    $target_string = /{target_escaped}/
+
   condition:
+    not $target_string and
     for any i in ( 0 .. filesize ) : (
         uint16be(i) ^ uint16be(i+2) == {first_xor}
         and not for 0x{acccum_plus_one:x} j in ( {offsets} ) : ( 
@@ -32,7 +37,12 @@ rule {title}_3byte
     description = "Look for three byte xor of target string. Creating ~16M separate rules would probably be faster (~3.2 GB rule file)"
     warning = "Loops over entire file, very poor performance."
     target_string = "{target_string}"
+
+  strings:
+    $target_string = /{target_escaped}/
+
   condition:
+    not $target_string and
     for any i in ( 0 .. filesize ) : ( 
       ( ( uint32be(i) ^ uint32be(i+3) ) >> 8 ) == {first_xor}
       and not for 0x{acccum_plus_one:x} j in ( {offsets} ) : ( 
@@ -53,7 +63,12 @@ rule {title}_4byte
     description = "Look for four byte xor of target string. Creating ~4G separate rules would probably be faster (~860 GB rule file)"
     warning = "Loops over entire file, very poor performance."
     target_string = "{target_string}"
+
+  strings:
+    $target_string = /{target_escaped}/
+
   condition:
+    not $target_string and
     for any i in ( 0 .. filesize ) : ( 
       uint32be(i) ^ uint32be(i+4) == {first_xor}
       and not for 0x{acccum_plus_one:x} j in ( {offsets} ) : ( 
@@ -98,6 +113,7 @@ def generate_rules(input_string, title, out_file=None):
         yr = d[i].format(
             title=title,
             target_string=input_string.replace('\\', '\\\\'),
+            target_escaped=re.escape(input_string).replace('/', '\\/'),
             first_xor=first_xor.decode('latin1'),
             accum=accum,
             acccum_plus_one=accum+1,
