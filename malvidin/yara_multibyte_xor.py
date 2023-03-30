@@ -17,8 +17,9 @@ rule {title}_2byte
     for any i in ( 0 .. filesize ) : (
         uint16be(i) ^ uint16be(i+2) == {first_xor}
         and not for 0x{acccum_plus_one:x} j in ( {offsets} ) : ( 
-            uint16be(j) ^ uint16be(j+2) )
-            and for 0x{accum:x} j in ( {offsets} ) : ( uint16be(j) ^ uint16be(j+2) )
+            uint16be(j) ^ uint16be(j+2) 
+        )
+        and for 0x{accum:x} j in ( {offsets} ) : ( uint16be(j) ^ uint16be(j+2) )
     )
 }}
 '''
