@@ -748,6 +748,7 @@ rule Heuristic_Stack_String_SeLoadDriverPrivilege_A {
     meta:
         description = "Detects the stack string SeLoadDriverPrivilege being loaded in a combination of 1, 2, and 4 byte chunks, not necessarily in order"
         author = "BitsOfBinary"
+        reference = "https://bitsofbinary.github.io/yara/2023/04/06/100daysofyara-day-96.html"
         version = "1.0"
         date = "2023-04-06"
         DaysofYARA = "96/100"
