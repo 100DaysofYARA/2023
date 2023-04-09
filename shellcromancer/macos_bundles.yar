@@ -96,3 +96,28 @@ rule macos_bundle_colorpicker
 			)
 		)
 }
+
+rule macos_bundle_findersync_appex
+{
+	meta:
+		description = "Identify macOS Finder Sync plugins - a macOS persistence vector."
+		author = "@shellcromancer"
+		version = "1.0"
+		date = "2023.04.09"
+		reference = "https://theevilbit.github.io/beyond/beyond_0026/"
+		DaysofYARA = "99/100"
+
+	strings:
+		$interface = "FinderSync"
+
+	condition:
+		(
+			uint32(0) == 0xfeedface or // Mach-O MH_MAGIC
+			uint32(0) == 0xcefaedfe or // Mach-O MH_CIGAM
+			uint32(0) == 0xfeedfacf or // Mach-O MH_MAGIC_64
+			uint32(0) == 0xcffaedfe or // Mach-O MH_CIGAM_64
+			uint32(0) == 0xcafebabe or // Mach-O FAT_MAGIC
+			uint32(0) == 0xbebafeca    // Mach-O FAT_CIGAM
+		) and
+		any of them
+}
